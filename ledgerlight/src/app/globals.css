@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: #f6f7f9;
+  color: #0f172a;
+}
+
+/* Hide number spinners; we format numbers ourselves */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@keyframes ll-pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgb(244 63 94 / 0.45); }
+  100% { box-shadow: 0 0 0 10px rgb(244 63 94 / 0); }
+}
+.ll-flash {
+  animation: ll-pulse-ring 0.9s ease-out 2;
+}
